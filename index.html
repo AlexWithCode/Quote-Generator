@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuoteGenerator<div class=""></div>Generator</title>
     <link rel="icon" type="image/png" href="favicon.png">    
     <link rel="stylesheet" Content-type="text/css" href="style.css">
     <link rel="stylesheet" Content-type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <title>Quote Generator<div class=""></div>Generator</title>
-
 </head>
 <body>
     <div class="quote-container" id="quote-container">
@@ -21,12 +20,12 @@
             <i class="fas fa-quote-left"></i>
         
             <!-- to take any space of the page other then the text - span-->
-            <span id="quote">Procrastinator? No, I just wait until the last second to do my work so I will be older, therefore wiser.</span>
+            <span id="quote"></span>
         </div>
 
         <!-- Author --> 
         <div class="quote-author">
-            <span id="author">Ron Burgundy</span>
+            <span id="author"></span>
         </div>
 
         <!-- Buttons -->
@@ -41,13 +40,14 @@
             </button>
 
             <!-- twitter button -->
-            <button class="twitter-button" id="twitter">
-                <i class="fab fa-twitter"></i>
+            <button class="twitter-button" id="twitter" title="Tweet This!">
+                <!-- tag i icon -->
+                <i class="fab fa-twitter"></i> 
             </button>
             
             <!-- <div class="who is author"></div> -->
 
-            <button id="new-quote">New Quote</button>
+            <button class="newQuote-button" id="new-quote">New Quote</button>
         </div>    
     </div>
     <!-- Script -->

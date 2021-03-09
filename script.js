@@ -2,11 +2,12 @@ const quoteContainer = document.getElementById('quote-container');
 const quoteText = document.getElementById('quote'); 
 const authorText = document.getElementById('author'); 
 const instagramBtn = document.getElementById('instagram'); 
-const newQuoteBth = document.getElementById('new-quote'); 
+const twitterBtn = document.getElementById('twitter'); 
+const newQuoteBtn = document.getElementById('new-quote'); 
 
 // Get Quote From API
-async function getQuote () {
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+async function getQuote() {
+    const proxyUrl = 'https://polar-spire-62097.herokuapp.com/0';
     const apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
     try {
         const response = await fetch(proxyUrl + apiUrl);
@@ -14,7 +15,7 @@ async function getQuote () {
        
         // If Author is blank, add 'Unknown'
         if (data.quoteAuthor === '') {
-            auothorText.innerText = 'Unknown';
+            authorText.innerText = 'Unknown';
         } else {
             authorText.innerText = data.quoteAuthor;
         }
@@ -25,7 +26,7 @@ async function getQuote () {
         } else {
             quoteText.classList.remove('long-quote');
         }
-
+        
         quoteText.innerText = data.quoteText;
     } catch (error) {
         getQuote();
@@ -43,12 +44,12 @@ function tweetQuote() {
 
 // Event Listeners
 newQuoteBtn.addEventListener('click', getQuote);
-twitterBth.addEventListener('click', tweetQuote);
-
+twitterBtn.addEventListener('click', tweetQuote);
+/*
 html2canvas(document.querySelector("#capture")).then(canvas => {
     document.body.appendChild(canvas)
 
 }); 
-
+*/
 // On Load
 getQuote();

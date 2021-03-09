@@ -19,8 +19,9 @@ body {
 }
 
 .quote-container {
+    margin-left: 20px;
+    margin-right: 20px;
     width: auto;
-    margin: center 10px;
     max-width: 900px;
     padding: 50px 70px;
     border-radius: 10px;
@@ -43,7 +44,7 @@ body {
 
 .quote-author {
     margin-top: 15px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     font-size: 2rem;
     font-weight: 400;
     font-style: italic;
@@ -78,7 +79,7 @@ button:active {
     box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
 }
 
-.instaButton {
+.instaButton { 
     text-decoration: none;
     color: white;
 }
@@ -104,14 +105,18 @@ button:active {
 
 
 /* Media Query: Tablet or Smaller */
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-width: 1024px) {
 
     .quote-container {
-        margin: auto 10px;
+        margin-left: 10px;
+        margin-right: 10px;
         padding: 20px;
+        border: 20px;
+        width: auto 10px;
     }
     .quote-text {
-        font-size: 1.5rem;
+        margin: center 50px;
+        font-size: 1.1rem;
     }
 
     .quote-author {
@@ -120,10 +125,15 @@ button:active {
 
     body {
         margin: auto 30px;
+        padding: 20px;
+    }
+
+    button {
+        font-size: 0.9rem;
+        height: 2.1rem;
+        padding: 0.5rem 0.4rem;
     }
 
     .fa-quote-left {
-        font-size: 3rem;
-    } 
-
-}
+        font-size: 2rem;
+    }

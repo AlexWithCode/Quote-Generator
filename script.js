@@ -3,11 +3,24 @@ const quoteText = document.getElementById('quote');
 const authorText = document.getElementById('author'); 
 const instagramBtn = document.getElementById('instagram'); 
 const twitterBtn = document.getElementById('twitter'); 
-const newQuoteBtn = document.getElementById('new-quote'); 
+const newQuoteBtn = document.getElementById('new-quote');
+const loader = document.getElementById('loader');
 
+function showLoadingSpinner() {
+    loader.hidden = false;
+    quoteContainer.hidden = true;
+}
+
+function removeLoadingSpinner() {
+    if (!loader.hidden) {
+        quoteContainer.hidden = false;
+        loader.hidden = true;
+    }
+}
 // Get Quote From API
 async function getQuote() {
-    const proxyUrl = 'https://polar-spire-62097.herokuapp.com/0';
+    showLoadingSpinner();
+    const proxyUrl = 'https://shielded-lowlands-49934.herokuapp.com/';
     const apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
     try {
         const response = await fetch(proxyUrl + apiUrl);
@@ -28,6 +41,9 @@ async function getQuote() {
         }
         
         quoteText.innerText = data.quoteText;
+
+        // Stop Loader, Show Quote
+        removeLoadingSpinner();
     } catch (error) {
         getQuote();
     }
@@ -53,3 +69,4 @@ html2canvas(document.querySelector("#capture")).then(canvas => {
 */
 // On Load
 getQuote();
+
